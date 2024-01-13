@@ -1,5 +1,7 @@
 
 package modelo;
+import modelo.recursos.EstadoCivil;
+import modelo.recursos.TipoSangre;
 import java.io.Serializable;
 /**
  * Clase abstracta que contiene los datos de Persona.

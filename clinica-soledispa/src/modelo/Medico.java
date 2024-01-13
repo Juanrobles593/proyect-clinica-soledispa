@@ -1,5 +1,7 @@
 
 package modelo;
+import modelo.recursos.EstadoCivil;
+import modelo.recursos.Especialidad;
 import java.io.Serializable;
 
 /**
@@ -23,7 +25,7 @@ public class Medico extends Persona implements Serializable {
      * @param direcciones Lista de direcciones
      */
     public Medico(Especialidad especialidad, String cedula, String nombre, String apellidos, String email, 
-            modelo.TipoSangre TipoSangre, EstadoCivil estadoCivil, Telefono[] telefonos, Direccion[] direcciones) {
+            modelo.recursos.TipoSangre TipoSangre, EstadoCivil estadoCivil, Telefono[] telefonos, Direccion[] direcciones) {
         super(cedula, nombre, apellidos, email, TipoSangre, estadoCivil, telefonos, direcciones);
         this.especialidad = especialidad;
     }
@@ -38,7 +40,7 @@ public class Medico extends Persona implements Serializable {
      * @param telefonos lista de los médicos
      * @param direcciones Lista de direcciones
      */
-    public Medico(Especialidad especialidad, String cedula, String nombre, String apellidos, modelo.TipoSangre TipoSangre,
+    public Medico(Especialidad especialidad, String cedula, String nombre, String apellidos, modelo.recursos.TipoSangre TipoSangre,
                 EstadoCivil estadoCivil, Telefono[] telefonos, Direccion[] direcciones) {
         super(cedula, nombre, apellidos, TipoSangre, estadoCivil, telefonos, direcciones);
         this.especialidad = especialidad;

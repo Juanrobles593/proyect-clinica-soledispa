@@ -1,6 +1,7 @@
 
 package modelo;
 
+import modelo.recursos.EstadoCivil;
 import java.io.Serializable;
 
 /**
@@ -20,7 +21,7 @@ public class Paciente extends Persona implements Serializable{
      * @param telefonos Telefonos del paciente
      * @param direcciones Direcciones del paciente.
      */
-    public Paciente(String cedula, String nombre, String apellidos, String email, modelo.TipoSangre TipoSangre,EstadoCivil estadoCivil, Telefono[] telefonos, Direccion[] direcciones) {    
+    public Paciente(String cedula, String nombre, String apellidos, String email, modelo.recursos.TipoSangre TipoSangre,EstadoCivil estadoCivil, Telefono[] telefonos, Direccion[] direcciones) {    
         super(cedula, nombre, apellidos, email, TipoSangre, estadoCivil, telefonos, direcciones);
     }
     /**
@@ -33,7 +34,7 @@ public class Paciente extends Persona implements Serializable{
      * @param telefonos Arreglo con los telefonos del paci
      * @param direcciones Arreglo con las direcciones del paciente
      */
-    public Paciente(String cedula, String nombre, String apellidos, modelo.TipoSangre TipoSangre,EstadoCivil estadoCivil, Telefono[] telefonos, Direccion[] direcciones) {
+    public Paciente(String cedula, String nombre, String apellidos, modelo.recursos.TipoSangre TipoSangre,EstadoCivil estadoCivil, Telefono[] telefonos, Direccion[] direcciones) {
         super(cedula, nombre, apellidos, TipoSangre, estadoCivil, telefonos, direcciones);
     }
     /**

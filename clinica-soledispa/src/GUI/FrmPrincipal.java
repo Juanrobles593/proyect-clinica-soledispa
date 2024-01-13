@@ -9,8 +9,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
 /**
- *
- * @author ROBLES MORALES
+ * @author X-FORCE - EQUIPO 3
+ * @version  PSW - 2023
  */
 public class FrmPrincipal extends javax.swing.JFrame {  
     /**
@@ -49,19 +49,18 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jMenu1.setText("jMenu1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Proyecto Primer Parcial");
+        setTitle("Clinica Soledispa");
         setBackground(new java.awt.Color(255, 255, 255));
         setLocation(new java.awt.Point(1, 1));
         setLocationByPlatform(true);
         setSize(new java.awt.Dimension(785, 510));
         getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.LINE_AXIS));
 
-        pnlBackGround.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         pnlBackGround.setPreferredSize(new java.awt.Dimension(785, 520));
         pnlBackGround.setViewportView(null);
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
-        bg.setPreferredSize(new java.awt.Dimension(1366, 681));
+        bg.setPreferredSize(new java.awt.Dimension(1360, 681));
 
         lblUsuario.setFont(new java.awt.Font("Nirmala UI", 1, 14)); // NOI18N
         lblUsuario.setText("USUARIO");
@@ -90,7 +89,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         btnIniciarSesion.setForeground(new java.awt.Color(255, 255, 255));
         btnIniciarSesion.setText("INICIAR SESIÓN");
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/images/icon-logo-clinica.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/images/icon-logo-clinica.png"))); // NOI18N
         jLabel1.setText("   ");
         jLabel1.setPreferredSize(new java.awt.Dimension(587, 164));
 

@@ -1,5 +1,6 @@
 
 package modelo;
+import modelo.recursos.Especialidad;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 /**

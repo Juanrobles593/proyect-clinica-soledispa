@@ -1,6 +1,7 @@
 
 package modelo;
 
+import modelo.recursos.Operadora;
 import java.io.Serializable;
 
 /**

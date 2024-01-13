@@ -1,6 +1,7 @@
 
 package modelo;
 
+import modelo.recursos.EstadoCivil;
 import java.io.Serializable;
 
 /**
@@ -20,7 +21,7 @@ public class Recepcionista extends Persona implements Serializable{
      * @param telefonos Telefonos del paciente.
      * @param direcciones Direcciones del paciente.
      */
-    public Recepcionista(String cedula, String nombre, String apellidos, String email, modelo.TipoSangre TipoSangre,EstadoCivil estadoCivil, Telefono[] telefonos, Direccion[] direcciones) {    
+    public Recepcionista(String cedula, String nombre, String apellidos, String email, modelo.recursos.TipoSangre TipoSangre,EstadoCivil estadoCivil, Telefono[] telefonos, Direccion[] direcciones) {    
         super(cedula, nombre, apellidos, email, TipoSangre, estadoCivil, telefonos, direcciones);
     }
     /**
