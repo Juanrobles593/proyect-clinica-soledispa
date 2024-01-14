@@ -13,36 +13,43 @@ public class Medico extends Persona implements Serializable {
     private Especialidad especialidad;
     
     /**
-     * Constructor completo de la clase Médicos.
+     * Constructor de la clase Médicos para crear instancias.
      * @param especialidad Especialidad del médico.
      * @param nombre Nombre o nombres del medico.
      * @param apellidos Apellidos del médico.
      * @param cedula Cedula o número de indentidad
-     * @param email correo electronico válido
+     * @param email Correo electronico del médico
      * @param TipoSangre tipo de sangre
      * @param estadoCivil estado actual del médico
-     * @param telefonos lista de los médicos
-     * @param direcciones Lista de direcciones
+     * @param poseeDiscapacidad Si el médico posee alguna discapacidad
+     * @param tipoDiscapacidad El tipo de discapacidad en caso de poseer.
+     * @param telefonos lista de los telefono del médicos.
+     * @param direcciones Lista de direcciones del médico.
      */
-    public Medico(Especialidad especialidad, String cedula, String nombre, String apellidos, String email, 
-            modelo.recursos.TipoSangre TipoSangre, EstadoCivil estadoCivil, Telefono[] telefonos, Direccion[] direcciones) {
-        super(cedula, nombre, apellidos, email, TipoSangre, estadoCivil, telefonos, direcciones);
+    public Medico(Especialidad especialidad, String cedula, String nombre, String apellidos, String email,
+            modelo.recursos.TipoSangre TipoSangre, EstadoCivil estadoCivil, boolean poseeDiscapacidad, 
+            String tipoDiscapacidad, Telefono[] telefonos, Direccion[] direcciones) {
+        super(cedula, nombre, apellidos, email, TipoSangre, estadoCivil, poseeDiscapacidad, tipoDiscapacidad, telefonos, direcciones);
         this.especialidad = especialidad;
     }
     /**
-     * Constructor de médico que no incluye el correo.
+     * Constructor de médico completo.
+     * @param id
      * @param especialidad Especialidad del médico.
      * @param nombre Nombre o nombres del medico.
      * @param apellidos Apellidos del médico.
      * @param cedula Cedula o número de indentidad
+     * @param email Correo electronico del médico
      * @param TipoSangre tipo de sangre
      * @param estadoCivil estado actual del médico
+     * @param poseeDiscapacidad Si el médico posee discapacidad.
+     * @param tipoDiscapacidad Tipo de discapacidad del médico en caso de poseer
      * @param telefonos lista de los médicos
      * @param direcciones Lista de direcciones
      */
-    public Medico(Especialidad especialidad, String cedula, String nombre, String apellidos, modelo.recursos.TipoSangre TipoSangre,
-                EstadoCivil estadoCivil, Telefono[] telefonos, Direccion[] direcciones) {
-        super(cedula, nombre, apellidos, TipoSangre, estadoCivil, telefonos, direcciones);
+    public Medico(int id,Especialidad especialidad, String cedula, String nombre, String apellidos,String email, modelo.recursos.TipoSangre TipoSangre,
+          EstadoCivil estadoCivil,boolean poseeDiscapacidad, String tipoDiscapacidad, Telefono[] telefonos, Direccion[] direcciones) {
+        super(id, cedula, nombre, apellidos, email, TipoSangre, estadoCivil, poseeDiscapacidad, tipoDiscapacidad, telefonos, direcciones);
         this.especialidad = especialidad;
     }
     /**

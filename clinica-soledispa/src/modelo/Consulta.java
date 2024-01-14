@@ -23,6 +23,7 @@ public class Consulta implements Serializable{
     private int pulso;
     private boolean seRealizo;
     private double valor;
+    private boolean signosVitalesTomados;
        
     /**
      * Constructor de Consulta con los datos relevantes.
@@ -70,8 +71,11 @@ public class Consulta implements Serializable{
      * @param pulso Pulso del paciente al momento de la cita médica.
      * @param seRealizo Se ha realizado o no la consulta.
      * @param valor Precio pagado por la consulta en el agendamiento.
+     * @param signosVitalesTomados Se ha tomado los signos vitales del paciente o no.
      */
-    public Consulta(int numero, LocalDateTime fechaHora, Paciente oPaciente, Especialidad especialidad, Medico oMedico, int habitación, String diagnostico, String receta, float talla, float peso, String presion, int pulso, boolean seRealizo, double valor) {
+    public Consulta(int numero, LocalDateTime fechaHora, Paciente oPaciente, Especialidad especialidad, Medico oMedico,
+                    int habitación,String diagnostico, String receta, float talla, float peso, String presion, int pulso, 
+                    boolean seRealizo,double valor, boolean signosVitalesTomados) {
         this.numero = numero;
         this.fechaHora = fechaHora;
         this.oPaciente = oPaciente;
@@ -86,6 +90,7 @@ public class Consulta implements Serializable{
         this.pulso = pulso;
         this.seRealizo = seRealizo;
         this.valor = valor;
+        this.signosVitalesTomados = signosVitalesTomados;
     }  
 
     /**
@@ -295,5 +300,22 @@ public class Consulta implements Serializable{
     public void setValor(double valor) {
         this.valor = valor;
     }
+    
+    /**
+     * Método que devuelve el valor si fue tomado o no los signos vitales.
+     * @return Si los signos vitales fueron tomados.
+     */
+    public boolean isSignosVitalesTomados() {
+        return signosVitalesTomados;
+    }
+    
+    /**
+     * Método que cambia el estado de si fueron o no lo signos vitales.
+     * @param signosVitalesTomados 
+     */
+    public void setSignosVitalesTomados(boolean signosVitalesTomados) {
+        this.signosVitalesTomados = signosVitalesTomados;
+    }
+    
 }
 

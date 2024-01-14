@@ -2,6 +2,7 @@
 package modelo;
 
 /**
+ * Clase Usuario que contien la información de los usuarios registrados en el sistema.
  * @author X-FORCE - EQUIPO 3
  * @version  PSW - 2023
  */
@@ -9,17 +10,20 @@ public class Usuario {
     Persona oPersona;
     String contrasenia;
     Rol oRol;  
+    boolean activo;
     
     /**
      * Constructor de la clase Usuario con todos los atributos.
      * @param oPersona   La persona asociada al usuario.
      * @param contrasenia  La contraseña del usuario.
      * @param oRol   El rol del usuario.
+     * @param activo Si el usuario esta activo o no.
      */
-    public Usuario(Persona oPersona, String contrasenia, Rol oRol) {
+    public Usuario(Persona oPersona, String contrasenia, Rol oRol, boolean activo) {
         this.oPersona = oPersona;
         this.contrasenia = contrasenia;
         this.oRol = oRol;
+        this.activo = activo;
     }
     
      /**
@@ -32,6 +36,18 @@ public class Usuario {
         this.oRol = oRol;
     }
     
+    /**
+     * Constructor de Usuario con sin contraseña
+     * @param oPersona Persona Asociada.
+     * @param oRol Rol de la persona.
+     * @param activo si esta o no activo.
+     */
+    public Usuario(Persona oPersona, Rol oRol, boolean activo) {
+        this.oPersona = oPersona;
+        this.oRol = oRol;
+        this.activo = activo;
+    }
+
     /**
      * Obtiene la persona asociada al usuario.
      * @return La persona asociada al usuario.
@@ -79,4 +95,21 @@ public class Usuario {
     public void setoRol(Rol oRol) {
         this.oRol = oRol;
     }
+    
+    /**
+     * Método que decuelve si la especialidad esta activa.
+     * @return Especialidad activa.
+     */
+    public boolean isActivo() {
+        return activo;
+    }
+    
+    /**
+     * Método que establece un nuevo valor
+     * @param activo nuevo valor de activo o inactivo.
+     */
+    public void setActivo(boolean activo) {
+        this.activo = activo;
+    }
+    
 }

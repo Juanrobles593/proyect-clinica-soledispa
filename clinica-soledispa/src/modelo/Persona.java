@@ -16,72 +16,91 @@ public abstract class Persona implements Serializable{
     protected String email;
     protected TipoSangre TipoSangre;
     protected EstadoCivil estadoCivil;
+    protected Boolean poseeDiscapacidad;
+    protected String tipoDiscapacidad;
     protected Telefono[] telefonos;
     protected Direccion[] direcciones;
     /**
-     * Constructor que contiene todos los datos de Persona.
-     * @param nombre Nombre de la persona
+     * Constructor de Persona para crear una instancia con correo.
+     * @param nombre Nombre de la persona.
      * @param apellidos Apellidos de la persona.
      * @param cedula  Número de identifiación de la persona.
-     * @param email Correo electronico de la persona
-     * @param TipoSangre Tipo de sangre obtenido de la clase enum
-     * @param estadoCivil Estado civil obtenido de la clase de tipo enum
-     * @param telefonos Contiene el o los telefonos de la persona
-     * @param direcciones Conyiene la o las direcciones de la persona
+     * @param email Correo electronico de la persona.
+     * @param TipoSangre Tipo de sangre obtenido de la clase enum.
+     * @param estadoCivil Estado civil obtenido de la clase de tipo enum.
+     * @param poseeDiscapacidad Indica si la persona posee o no alfuna discapacidad
+     * @param tipoDiscapacidad Indica el tipo o detalle de la discapacidad.
+     * @param telefonos Contiene el o los telefonos de la persona.
+     * @param direcciones Conyiene la o las direcciones de la persona.
      */
     public Persona(String cedula, String nombre, String apellidos, String email,
-                                TipoSangre TipoSangre, EstadoCivil estadoCivil, 
-                                Telefono[] telefonos, Direccion[] direcciones) {    
+                                TipoSangre TipoSangre, EstadoCivil estadoCivil, Boolean poseeDiscapacidad,  
+                                String tipoDiscapacidad,Telefono[] telefonos, Direccion[] direcciones) {    
         this.cedula = cedula;
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.email = email;
         this.TipoSangre = TipoSangre;
         this.estadoCivil = estadoCivil;
+        this.poseeDiscapacidad = poseeDiscapacidad;
+        this.tipoDiscapacidad = tipoDiscapacidad;
         this.telefonos = telefonos;
         this.direcciones = direcciones;
     }
     /**
-     * Constructor que no contiene el campo correo.
-     * @param nombre Nombre de la persona
+     * Constructor de Persona para crear una instancia sin correo.
+     * @param nombre Nombre de la persona.
      * @param apellidos Apellidos de la persona.
      * @param cedula  Número de identifiación de la persona.
-     * @param TipoSangre Tipo de sangre obtenido de la clase enum
-     * @param estadoCivil Estado civil obtenido de la clase de tipo enum
-     * @param telefonos Contiene el o los telefonos de la persona
-     * @param direcciones Conyiene la o las direcciones de la persona
+     * @param TipoSangre Tipo de sangre de la persona.
+     * @param estadoCivil Estado civil obtenido de la persona.
+     * @param poseeDiscapacidad Indica si la persona posee o no alfuna discapacidad.
+     * @param tipoDiscapacidad Indica el tipo o detalle de la discapacidad.
+     * @param telefonos Contiene el o los telefonos de la persona.
+     * @param direcciones Conyiene la o las direcciones de la persona.
      */
-    public Persona(String cedula, String nombre, String apellidos, TipoSangre TipoSangre, EstadoCivil estadoCivil, Telefono[] telefonos, Direccion[] direcciones) {
+    public Persona(String cedula, String nombre, String apellidos, TipoSangre TipoSangre, EstadoCivil estadoCivil, 
+                    Boolean poseeDiscapacidad, String tipoDiscapacidad,Telefono[] telefonos, Direccion[] direcciones) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.apellidos = apellidos;
+        this.email = "N/A";
         this.TipoSangre = TipoSangre;
         this.estadoCivil = estadoCivil;
+        this.poseeDiscapacidad = poseeDiscapacidad;
+        this.tipoDiscapacidad = tipoDiscapacidad;
         this.telefonos = telefonos;
         this.direcciones = direcciones;
     }
+        
     /**
-     * Constructor que no contiene el campo correo.
+     * Constructor con todos los campos.
      * @param id id del médico
      * @param nombre Nombre de la persona
      * @param apellidos Apellidos de la persona.
      * @param cedula  Número de identifiación de la persona.
+     * @param email Correo de la persona.
      * @param TipoSangre Tipo de sangre obtenido de la clase enum
      * @param estadoCivil Estado civil obtenido de la clase de tipo enum
+     * @param poseeDiscapacidad Indica si la persona posee o no alfuna discapacidad
+     * @param tipoDiscapacidad Indica el tipo o detalle de la discapacidad.
      * @param telefonos Contiene el o los telefonos de la persona
      * @param direcciones Conyiene la o las direcciones de la persona
      */
-    public Persona(int id,String cedula, String nombre, String apellidos, TipoSangre TipoSangre, EstadoCivil estadoCivil, Telefono[] telefonos, Direccion[] direcciones) {
+    public Persona(int id,String cedula, String nombre, String apellidos,String email, TipoSangre TipoSangre, EstadoCivil estadoCivil, 
+                    Boolean poseeDiscapacidad, String tipoDiscapacidad,Telefono[] telefonos, Direccion[] direcciones) {
         this.id = id;
         this.cedula = cedula;
         this.nombre = nombre;
         this.apellidos = apellidos;
+        this.email = email;
         this.TipoSangre = TipoSangre;
         this.estadoCivil = estadoCivil;
+        this.poseeDiscapacidad = poseeDiscapacidad;
+        this.tipoDiscapacidad = tipoDiscapacidad;
         this.telefonos = telefonos;
         this.direcciones = direcciones;
     }
-
     /**
      * Método que devuelve el nombre de la persona.
      * @return Nombre de la persona.

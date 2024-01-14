@@ -4,11 +4,13 @@ import javax.swing.JButton;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
 /**
+ * Frame principal del sistema, el login de ingreso al sistema.
  * @author X-FORCE - EQUIPO 3
  * @version  PSW - 2023
  */
@@ -45,6 +47,17 @@ public class FrmPrincipal extends javax.swing.JFrame {
         mniCerrarSesion = new javax.swing.JMenuItem();
         mniSalir = new javax.swing.JMenuItem();
         mniAyuda = new javax.swing.JMenuItem();
+        mnMedico = new javax.swing.JMenu();
+        mniRegistrarMedico = new javax.swing.JMenuItem();
+        mnPaciente = new javax.swing.JMenu();
+        mniRegistrarMedico1 = new javax.swing.JMenuItem();
+        mnRecepcionista = new javax.swing.JMenu();
+        mniRegistrarRecepcionista = new javax.swing.JMenuItem();
+        mnCitaMedica = new javax.swing.JMenu();
+        mniAgendar = new javax.swing.JMenuItem();
+        mniReprogramar = new javax.swing.JMenuItem();
+        mniConsultar = new javax.swing.JMenuItem();
+        mnReprogramar2 = new javax.swing.JMenuItem();
 
         jMenu1.setText("jMenu1");
 
@@ -53,24 +66,28 @@ public class FrmPrincipal extends javax.swing.JFrame {
         setBackground(new java.awt.Color(255, 255, 255));
         setLocation(new java.awt.Point(1, 1));
         setLocationByPlatform(true);
-        setSize(new java.awt.Dimension(785, 510));
+        setSize(new java.awt.Dimension(1155, 540));
         getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.LINE_AXIS));
 
-        pnlBackGround.setPreferredSize(new java.awt.Dimension(785, 520));
+        pnlBackGround.setPreferredSize(new java.awt.Dimension(1070, 520));
+        pnlBackGround.setRequestFocusEnabled(false);
         pnlBackGround.setViewportView(null);
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
-        bg.setPreferredSize(new java.awt.Dimension(1360, 681));
+        bg.setPreferredSize(new java.awt.Dimension(1070, 520));
 
+        lblUsuario.setBackground(new java.awt.Color(0, 0, 255));
         lblUsuario.setFont(new java.awt.Font("Nirmala UI", 1, 14)); // NOI18N
+        lblUsuario.setForeground(new java.awt.Color(0, 0, 102));
         lblUsuario.setText("USUARIO");
 
         lblPasword.setFont(new java.awt.Font("Nirmala UI", 1, 14)); // NOI18N
+        lblPasword.setForeground(new java.awt.Color(0, 0, 102));
         lblPasword.setText("CONTRASEÑA");
 
-        spt1.setBackground(new java.awt.Color(153, 153, 153));
+        spt1.setBackground(new java.awt.Color(0, 0, 255));
 
-        spt2.setBackground(new java.awt.Color(153, 153, 153));
+        spt2.setBackground(new java.awt.Color(51, 51, 255));
 
         txtPassword.setFont(new java.awt.Font("Nirmala UI", 0, 14)); // NOI18N
         txtPassword.setForeground(new java.awt.Color(153, 153, 153));
@@ -85,9 +102,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
         txtUsuario.setBorder(null);
         txtUsuario.setFocusable(false);
 
-        btnIniciarSesion.setBackground(new java.awt.Color(51, 102, 255));
+        btnIniciarSesion.setBackground(new java.awt.Color(51, 204, 255));
+        btnIniciarSesion.setFont(new java.awt.Font("Nirmala UI", 1, 18)); // NOI18N
         btnIniciarSesion.setForeground(new java.awt.Color(255, 255, 255));
         btnIniciarSesion.setText("INICIAR SESIÓN");
+        btnIniciarSesion.setToolTipText("");
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/images/icon-logo-clinica.png"))); // NOI18N
         jLabel1.setText("   ");
@@ -100,49 +119,49 @@ public class FrmPrincipal extends javax.swing.JFrame {
             .addGroup(bgLayout.createSequentialGroup()
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addGap(500, 500, 500)
+                        .addGap(248, 248, 248)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 620, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(bgLayout.createSequentialGroup()
+                        .addGap(413, 413, 413)
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblUsuario)
+                            .addComponent(spt2, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblPasword)
                             .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(spt2, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(spt1, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(bgLayout.createSequentialGroup()
-                                .addGap(41, 41, 41)
-                                .addComponent(btnIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(spt1, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addGap(403, 403, 403)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)))
-                .addGap(370, 370, 370))
+                        .addGap(443, 443, 443)
+                        .addComponent(btnIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(202, Short.MAX_VALUE))
         );
         bgLayout.setVerticalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
-                .addGap(77, 77, 77)
+                .addGap(65, 65, 65)
                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(81, 81, 81)
+                .addGap(18, 18, 18)
                 .addComponent(lblUsuario)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(spt2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblPasword)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(spt1, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(121, 121, 121))
+                .addGap(252, 252, 252))
         );
 
         pnlBackGround.setViewportView(bg);
 
         getContentPane().add(pnlBackGround);
 
-        mb.setBackground(new java.awt.Color(255, 255, 255));
+        mb.setBackground(new java.awt.Color(102, 204, 255));
         mb.setBorder(null);
         mb.setAlignmentY(0.1F);
         mb.setBorderPainted(false);
@@ -172,6 +191,43 @@ public class FrmPrincipal extends javax.swing.JFrame {
         mnPrincipal.add(mniAyuda);
 
         mb.add(mnPrincipal);
+
+        mnMedico.setText("MEDICOS");
+
+        mniRegistrarMedico.setText("REGISTRAR");
+        mnMedico.add(mniRegistrarMedico);
+
+        mb.add(mnMedico);
+
+        mnPaciente.setText("PACIENTE");
+
+        mniRegistrarMedico1.setText("REGISTRAR");
+        mnPaciente.add(mniRegistrarMedico1);
+
+        mb.add(mnPaciente);
+
+        mnRecepcionista.setText("RECEPCIONISTA");
+
+        mniRegistrarRecepcionista.setText("REGISTRAR");
+        mnRecepcionista.add(mniRegistrarRecepcionista);
+
+        mb.add(mnRecepcionista);
+
+        mnCitaMedica.setText("CITAS MÉDICAS");
+
+        mniAgendar.setText("AGENDAR");
+        mnCitaMedica.add(mniAgendar);
+
+        mniReprogramar.setText("REPROGRAMAR");
+        mnCitaMedica.add(mniReprogramar);
+
+        mniConsultar.setText("CONSULTAR");
+        mnCitaMedica.add(mniConsultar);
+
+        mnReprogramar2.setText("CONSULTAR");
+        mnCitaMedica.add(mnReprogramar2);
+
+        mb.add(mnCitaMedica);
 
         setJMenuBar(mb);
 
@@ -213,6 +269,19 @@ public class FrmPrincipal extends javax.swing.JFrame {
     public JScrollPane getPnlBackGround() {
         return pnlBackGround;
     }
+
+    public JMenuItem getMniRegistrarMedico() {
+        return mniRegistrarMedico;
+    }
+
+    public JPanel getBg() {
+        return bg;
+    }
+
+    public JMenuItem getMniSalir() {
+        return mniSalir;
+    }
+    
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
@@ -222,10 +291,21 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel lblPasword;
     private javax.swing.JLabel lblUsuario;
     private javax.swing.JMenuBar mb;
+    private javax.swing.JMenu mnCitaMedica;
+    private javax.swing.JMenu mnMedico;
+    private javax.swing.JMenu mnPaciente;
     private javax.swing.JMenu mnPrincipal;
+    private javax.swing.JMenu mnRecepcionista;
+    private javax.swing.JMenuItem mnReprogramar2;
+    private javax.swing.JMenuItem mniAgendar;
     private javax.swing.JMenuItem mniAyuda;
     private javax.swing.JMenuItem mniCerrarSesion;
+    private javax.swing.JMenuItem mniConsultar;
     private javax.swing.JMenuItem mniInicio;
+    private javax.swing.JMenuItem mniRegistrarMedico;
+    private javax.swing.JMenuItem mniRegistrarMedico1;
+    private javax.swing.JMenuItem mniRegistrarRecepcionista;
+    private javax.swing.JMenuItem mniReprogramar;
     private javax.swing.JMenuItem mniSalir;
     private javax.swing.JScrollPane pnlBackGround;
     private javax.swing.JSeparator spt1;

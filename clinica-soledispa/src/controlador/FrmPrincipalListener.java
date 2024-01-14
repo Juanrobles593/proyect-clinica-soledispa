@@ -2,6 +2,8 @@
 package controlador;
 
 import GUI.FrmPrincipal;
+import GUI.PnlCitaMedica;
+import GUI.PnlRegistrar;
 import java.awt.Color;
 import java.awt.Desktop;
 import java.awt.event.ActionEvent;
@@ -23,6 +25,7 @@ public class FrmPrincipalListener implements ActionListener, MouseListener{
     private final Color colorNegro51 = new Color(51,51,51);
     private final Color colorNegro153 = new Color(153,153,153);
     private FrmPrincipal frm;
+    private PnlRegistrar pnlRegistrarMedico;
        
     
     /**
@@ -48,9 +51,24 @@ public class FrmPrincipalListener implements ActionListener, MouseListener{
             String contrasenia = String.valueOf(frm.getTxtPassword().getPassword());
             //peticion a la base de datos
             if(autenticacion(usuario, contrasenia)){
-                
+                //es admin
             }
+            frm.getPnlBackGround().setViewportView(new PnlCitaMedica());
         }
+        if(obj == frm.getMniCerrarSesion()){
+            frm.getPnlBackGround().setViewportView(frm.getBg());
+        }
+        if(obj == frm.getMniSalir()){
+            System.exit(0);
+        }
+        if(obj == frm.getMniRegistrarMedico()){
+            if(pnlRegistrarMedico == null){
+                pnlRegistrarMedico = new PnlRegistrar();
+                PnlRegistrarListener p = new PnlRegistrarListener(pnlRegistrarMedico);
+            } 
+            frm.getPnlBackGround().setViewportView(pnlRegistrarMedico);
+        }
+       
     }
     
     // ------------MouseListener---------------------
@@ -158,6 +176,8 @@ public class FrmPrincipalListener implements ActionListener, MouseListener{
         frm.getMniCerrarSesion().addActionListener(this);
         frm.getMniAyuda().addActionListener(this);
         frm.getBtnIniciarSesion().addActionListener(this);
+        frm.getMniRegistrarMedico().addActionListener(this);
+        frm.getMniSalir().addActionListener(this);
     }
     
     /**
@@ -196,7 +216,7 @@ public class FrmPrincipalListener implements ActionListener, MouseListener{
         frm.getPnlBackGround().setViewportView(pnl);
         validar();
     }
-
+    
     private boolean autenticacion(String usuario, String contrasenia) {
         return true;
     }
