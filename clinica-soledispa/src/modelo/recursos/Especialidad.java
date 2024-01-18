@@ -7,19 +7,31 @@ package modelo.recursos;
  * @version  PSW - 2023
  */
 public class Especialidad {
-    private int idEspecialidad;
+    private int id;
     private String nombre;
     private double valorCita;
     private boolean activa;
     
     /**
+     * Constructor vacio de Especialidad
+     * 
+     */
+    public Especialidad( ) {
+        
+    }
+    
+    public Especialidad( int id, String nombre) {
+        this.id = id;
+        this.nombre = nombre;
+    }
+    /**
      * Constructor con parámetros de la clase Especialidad.
-     * @param idEspecialidad El identificador único de la especialidad.
+     * @param id El identificador único de la especialidad.
      * @param nombre         El nombre de la especialidad.
      * @param valorCita  Valor de la cita médica de esa especialidad.
      */
-    public Especialidad(int idEspecialidad, String nombre, double valorCita) {
-        this.idEspecialidad = idEspecialidad;
+    public Especialidad(int id, String nombre, double valorCita) {
+        this.id = id;
         this.nombre = nombre;
         this.valorCita = valorCita;
         this.activa = true;
@@ -27,13 +39,13 @@ public class Especialidad {
     
     /**
      * Constructor con parámetros de la clase Especialidad.
-     * @param idEspecialidad El identificador único de la especialidad.
+     * @param id El identificador único de la especialidad.
      * @param nombre         El nombre de la especialidad.
      * @param valorCita      Valor de la cita médica de esa especialidad.
      * @param activa        Si la especialidad se encuentra activa o no.
      */ 
-    public Especialidad(int idEspecialidad, String nombre, double valorCita,boolean activa) {
-        this.idEspecialidad = idEspecialidad;
+    public Especialidad(int id, String nombre, double valorCita,boolean activa) {
+        this.id = id;
         this.nombre = nombre;
         this.valorCita = valorCita;
         this.activa = activa;
@@ -43,10 +55,17 @@ public class Especialidad {
      * Obtiene el identificador único de la especialidad.
      * @return El identificador único de la especialidad.
      */
-    public int getIdEspecialidad() {
-        return idEspecialidad;
+    public int getId() {
+        return id;
     }
-
+    /**
+     * Establece el id de la especialidad.
+     * @param id El nombre de la especialidad.
+     */
+    public void setId(int id) {
+        this.id = id;
+    }
+    
     /**
      * Obtiene el nombre de la especialidad. 
      * @return El nombre de la especialidad.

@@ -97,7 +97,7 @@
             <Property name="text" type="java.lang.String" value="PACIENTE"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="mniRegistrarMedico1">
+            <MenuItem class="javax.swing.JMenuItem" name="mniRegistrarPaciente">
               <Properties>
                 <Property name="text" type="java.lang.String" value="REGISTRAR"/>
               </Properties>
@@ -110,6 +110,18 @@
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="mniRegistrarRecepcionista">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="REGISTRAR"/>
+              </Properties>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="mnEnfermero">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="ENFERMERO"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="mniRegistrarEnfermero">
               <Properties>
                 <Property name="text" type="java.lang.String" value="REGISTRAR"/>
               </Properties>
@@ -208,7 +220,11 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="443" max="-2" attributes="0"/>
+                              <Component id="btnIniciarSesion" min="-2" pref="197" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="248" max="-2" attributes="0"/>
                               <Component id="jLabel1" min="-2" pref="620" max="-2" attributes="0"/>
                           </Group>
@@ -222,10 +238,6 @@
                                   <Component id="txtPassword" alignment="0" min="-2" pref="316" max="-2" attributes="0"/>
                                   <Component id="spt1" alignment="0" min="-2" pref="316" max="-2" attributes="0"/>
                               </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="443" max="-2" attributes="0"/>
-                              <Component id="btnIniciarSesion" min="-2" pref="197" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace pref="202" max="32767" attributes="0"/>

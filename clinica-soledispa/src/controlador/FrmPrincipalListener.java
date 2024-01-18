@@ -26,6 +26,9 @@ public class FrmPrincipalListener implements ActionListener, MouseListener{
     private final Color colorNegro153 = new Color(153,153,153);
     private FrmPrincipal frm;
     private PnlRegistrar pnlRegistrarMedico;
+    private PnlRegistrar pnlRegistrarPaciente;
+    private PnlRegistrar pnlRegistrarEnfermero;
+    private PnlRegistrar pnlRegistrarRecepcionista;
        
     
     /**
@@ -35,6 +38,7 @@ public class FrmPrincipalListener implements ActionListener, MouseListener{
     public FrmPrincipalListener(FrmPrincipal frm) {
         this.frm = frm;
         addListeners();
+        //frm.getMb().setVisible(false);
     }
     
     //------------ActionListener-----------------------
@@ -65,10 +69,38 @@ public class FrmPrincipalListener implements ActionListener, MouseListener{
             if(pnlRegistrarMedico == null){
                 pnlRegistrarMedico = new PnlRegistrar();
                 PnlRegistrarListener p = new PnlRegistrarListener(pnlRegistrarMedico);
+                try {
+                    p.vistaMedico();
+                } catch (ClassNotFoundException ex) {
+                    System.out.println(ex.toString());
+                }
             } 
-            frm.getPnlBackGround().setViewportView(pnlRegistrarMedico);
+            setView(pnlRegistrarMedico);
+        } 
+        if(obj == frm.getMniRegistrarPaciente()){
+            if(pnlRegistrarPaciente == null){
+                pnlRegistrarPaciente = new PnlRegistrar();
+                PnlRegistrarListener p = new PnlRegistrarListener(pnlRegistrarPaciente);
+                p.vistaPaciente();   
+            } 
+            setView(pnlRegistrarPaciente);
         }
-       
+        if(obj == frm.getMniRegistrarEnfermero()){
+            if(pnlRegistrarEnfermero == null){
+                pnlRegistrarEnfermero = new PnlRegistrar();
+                PnlRegistrarListener p = new PnlRegistrarListener(pnlRegistrarEnfermero);
+                p.vistaEnfermero();
+            } 
+            setView(pnlRegistrarEnfermero);
+        }
+        if(obj == frm.getMniRegistrarRecepcionista()){
+            if(pnlRegistrarRecepcionista == null){
+                pnlRegistrarRecepcionista = new PnlRegistrar();
+                PnlRegistrarListener p = new PnlRegistrarListener(pnlRegistrarRecepcionista);
+                p.vistaRecepcionista();
+            } 
+            setView(pnlRegistrarRecepcionista);
+        }
     }
     
     // ------------MouseListener---------------------
@@ -178,6 +210,9 @@ public class FrmPrincipalListener implements ActionListener, MouseListener{
         frm.getBtnIniciarSesion().addActionListener(this);
         frm.getMniRegistrarMedico().addActionListener(this);
         frm.getMniSalir().addActionListener(this);
+        frm.getMniRegistrarPaciente().addActionListener(this);
+        frm.getMniRegistrarEnfermero().addActionListener(this);
+        frm.getMniRegistrarRecepcionista().addActionListener(this);
     }
     
     /**

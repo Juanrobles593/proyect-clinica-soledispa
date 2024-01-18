@@ -3,13 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Nueva%20carpeta/clinica-soledispa/src/GUI/PnlRegistros.java</file>
-            <file>file:/C:/Nueva%20carpeta/clinica-soledispa/src/modelo/Paciente.java</file>
+            <file>file:/C:/Nueva%20carpeta/clinica-soledispa/src/GUI/JDTelefono.java</file>
             <file>file:/C:/Nueva%20carpeta/clinica-soledispa/src/Principal.java</file>
-            <file>file:/C:/Nueva%20carpeta/clinica-soledispa/src/controlador/PnlRegistrosListener.java</file>
-            <file>file:/C:/Nueva%20carpeta/clinica-soledispa/src/GUI/tablas/TblPaciente.java</file>
+            <file>file:/C:/Nueva%20carpeta/clinica-soledispa/src/modelo/bd/GestorBD.java</file>
             <file>file:/C:/Nueva%20carpeta/clinica-soledispa/src/modelo/Persona.java</file>
             <file>file:/C:/Nueva%20carpeta/clinica-soledispa/src/GUI/FrmPrincipal.java</file>
+            <file>file:/C:/Nueva%20carpeta/clinica-soledispa/src/GUI/PnlRegistrar.java</file>
+            <file>file:/C:/Nueva%20carpeta/clinica-soledispa/src/controlador/PnlRegistrarListener.java</file>
         </group>
     </open-files>
 </project-private>

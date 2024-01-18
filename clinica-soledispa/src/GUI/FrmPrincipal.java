@@ -50,9 +50,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
         mnMedico = new javax.swing.JMenu();
         mniRegistrarMedico = new javax.swing.JMenuItem();
         mnPaciente = new javax.swing.JMenu();
-        mniRegistrarMedico1 = new javax.swing.JMenuItem();
+        mniRegistrarPaciente = new javax.swing.JMenuItem();
         mnRecepcionista = new javax.swing.JMenu();
         mniRegistrarRecepcionista = new javax.swing.JMenuItem();
+        mnEnfermero = new javax.swing.JMenu();
+        mniRegistrarEnfermero = new javax.swing.JMenuItem();
         mnCitaMedica = new javax.swing.JMenu();
         mniAgendar = new javax.swing.JMenuItem();
         mniReprogramar = new javax.swing.JMenuItem();
@@ -119,6 +121,9 @@ public class FrmPrincipal extends javax.swing.JFrame {
             .addGroup(bgLayout.createSequentialGroup()
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bgLayout.createSequentialGroup()
+                        .addGap(443, 443, 443)
+                        .addComponent(btnIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(bgLayout.createSequentialGroup()
                         .addGap(248, 248, 248)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 620, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(bgLayout.createSequentialGroup()
@@ -129,10 +134,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
                             .addComponent(spt2, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblPasword)
                             .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(spt1, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(bgLayout.createSequentialGroup()
-                        .addGap(443, 443, 443)
-                        .addComponent(btnIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(spt1, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(202, Short.MAX_VALUE))
         );
         bgLayout.setVerticalGroup(
@@ -201,8 +203,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         mnPaciente.setText("PACIENTE");
 
-        mniRegistrarMedico1.setText("REGISTRAR");
-        mnPaciente.add(mniRegistrarMedico1);
+        mniRegistrarPaciente.setText("REGISTRAR");
+        mnPaciente.add(mniRegistrarPaciente);
 
         mb.add(mnPaciente);
 
@@ -212,6 +214,13 @@ public class FrmPrincipal extends javax.swing.JFrame {
         mnRecepcionista.add(mniRegistrarRecepcionista);
 
         mb.add(mnRecepcionista);
+
+        mnEnfermero.setText("ENFERMERO");
+
+        mniRegistrarEnfermero.setText("REGISTRAR");
+        mnEnfermero.add(mniRegistrarEnfermero);
+
+        mb.add(mnEnfermero);
 
         mnCitaMedica.setText("CITAS MÉDICAS");
 
@@ -281,6 +290,30 @@ public class FrmPrincipal extends javax.swing.JFrame {
     public JMenuItem getMniSalir() {
         return mniSalir;
     }
+
+    public JMenuItem getMniAgendar() {
+        return mniAgendar;
+    }
+
+    public JMenuItem getMniConsultar() {
+        return mniConsultar;
+    }
+
+    public JMenuItem getMniRegistrarRecepcionista() {
+        return mniRegistrarRecepcionista;
+    }
+
+    public JMenuItem getMniReprogramar() {
+        return mniReprogramar;
+    }
+
+    public JMenuItem getMniRegistrarEnfermero() {
+        return mniRegistrarEnfermero;
+    }
+
+    public JMenuItem getMniRegistrarPaciente() {
+        return mniRegistrarPaciente;
+    }
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -292,6 +325,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel lblUsuario;
     private javax.swing.JMenuBar mb;
     private javax.swing.JMenu mnCitaMedica;
+    private javax.swing.JMenu mnEnfermero;
     private javax.swing.JMenu mnMedico;
     private javax.swing.JMenu mnPaciente;
     private javax.swing.JMenu mnPrincipal;
@@ -302,8 +336,9 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem mniCerrarSesion;
     private javax.swing.JMenuItem mniConsultar;
     private javax.swing.JMenuItem mniInicio;
+    private javax.swing.JMenuItem mniRegistrarEnfermero;
     private javax.swing.JMenuItem mniRegistrarMedico;
-    private javax.swing.JMenuItem mniRegistrarMedico1;
+    private javax.swing.JMenuItem mniRegistrarPaciente;
     private javax.swing.JMenuItem mniRegistrarRecepcionista;
     private javax.swing.JMenuItem mniReprogramar;
     private javax.swing.JMenuItem mniSalir;
