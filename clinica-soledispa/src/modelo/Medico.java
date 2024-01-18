@@ -56,6 +56,17 @@ public class Medico extends Persona {
         super(id, cedula, nombre, apellidos, email, tipoSangre, estadoCivil, poseeDiscapacidad, tipoDiscapacidad,fechaNacimiento, sexo,telefonos, direcciones);
         this.especialidad = especialidad;
     }
+    
+    /**
+     * Método que crea personas con solo 3 paramteros.
+     * @param id
+     * @param nombre
+     * @param apellidos 
+     */
+    public Medico(int id, String nombre, String apellidos) {
+        super(id, nombre, apellidos);
+    }
+    
     /**
      * Método que devuelve el valor de especialidad del médico.
      * @return Especialidad del médico.

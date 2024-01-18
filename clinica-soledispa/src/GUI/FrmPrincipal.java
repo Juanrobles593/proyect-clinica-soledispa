@@ -49,17 +49,24 @@ public class FrmPrincipal extends javax.swing.JFrame {
         mniAyuda = new javax.swing.JMenuItem();
         mnMedico = new javax.swing.JMenu();
         mniRegistrarMedico = new javax.swing.JMenuItem();
+        mniRegistrarMedico1 = new javax.swing.JMenuItem();
         mnPaciente = new javax.swing.JMenu();
         mniRegistrarPaciente = new javax.swing.JMenuItem();
+        mniRegistrarPaciente1 = new javax.swing.JMenuItem();
         mnRecepcionista = new javax.swing.JMenu();
         mniRegistrarRecepcionista = new javax.swing.JMenuItem();
+        mniRegistrarRecepcionista1 = new javax.swing.JMenuItem();
         mnEnfermero = new javax.swing.JMenu();
         mniRegistrarEnfermero = new javax.swing.JMenuItem();
+        mniRegistrarEnfermero1 = new javax.swing.JMenuItem();
         mnCitaMedica = new javax.swing.JMenu();
         mniAgendar = new javax.swing.JMenuItem();
         mniReprogramar = new javax.swing.JMenuItem();
         mniConsultar = new javax.swing.JMenuItem();
         mnReprogramar2 = new javax.swing.JMenuItem();
+        mnEnfermero1 = new javax.swing.JMenu();
+        mniRegistrarEnfermero2 = new javax.swing.JMenuItem();
+        mniRegistrarEnfermero3 = new javax.swing.JMenuItem();
 
         jMenu1.setText("jMenu1");
 
@@ -199,12 +206,18 @@ public class FrmPrincipal extends javax.swing.JFrame {
         mniRegistrarMedico.setText("REGISTRAR");
         mnMedico.add(mniRegistrarMedico);
 
+        mniRegistrarMedico1.setText("REPORTE");
+        mnMedico.add(mniRegistrarMedico1);
+
         mb.add(mnMedico);
 
         mnPaciente.setText("PACIENTE");
 
         mniRegistrarPaciente.setText("REGISTRAR");
         mnPaciente.add(mniRegistrarPaciente);
+
+        mniRegistrarPaciente1.setText("REPORTE");
+        mnPaciente.add(mniRegistrarPaciente1);
 
         mb.add(mnPaciente);
 
@@ -213,12 +226,18 @@ public class FrmPrincipal extends javax.swing.JFrame {
         mniRegistrarRecepcionista.setText("REGISTRAR");
         mnRecepcionista.add(mniRegistrarRecepcionista);
 
+        mniRegistrarRecepcionista1.setText("REPORTE");
+        mnRecepcionista.add(mniRegistrarRecepcionista1);
+
         mb.add(mnRecepcionista);
 
         mnEnfermero.setText("ENFERMERO");
 
         mniRegistrarEnfermero.setText("REGISTRAR");
         mnEnfermero.add(mniRegistrarEnfermero);
+
+        mniRegistrarEnfermero1.setText("REPORTE");
+        mnEnfermero.add(mniRegistrarEnfermero1);
 
         mb.add(mnEnfermero);
 
@@ -233,10 +252,20 @@ public class FrmPrincipal extends javax.swing.JFrame {
         mniConsultar.setText("CONSULTAR");
         mnCitaMedica.add(mniConsultar);
 
-        mnReprogramar2.setText("CONSULTAR");
+        mnReprogramar2.setText("TOMAR SIGNOS VITALES");
         mnCitaMedica.add(mnReprogramar2);
 
         mb.add(mnCitaMedica);
+
+        mnEnfermero1.setText("USUARIOS");
+
+        mniRegistrarEnfermero2.setText("EDITAR");
+        mnEnfermero1.add(mniRegistrarEnfermero2);
+
+        mniRegistrarEnfermero3.setText("REPORTE");
+        mnEnfermero1.add(mniRegistrarEnfermero3);
+
+        mb.add(mnEnfermero1);
 
         setJMenuBar(mb);
 
@@ -326,6 +355,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuBar mb;
     private javax.swing.JMenu mnCitaMedica;
     private javax.swing.JMenu mnEnfermero;
+    private javax.swing.JMenu mnEnfermero1;
     private javax.swing.JMenu mnMedico;
     private javax.swing.JMenu mnPaciente;
     private javax.swing.JMenu mnPrincipal;
@@ -337,9 +367,15 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem mniConsultar;
     private javax.swing.JMenuItem mniInicio;
     private javax.swing.JMenuItem mniRegistrarEnfermero;
+    private javax.swing.JMenuItem mniRegistrarEnfermero1;
+    private javax.swing.JMenuItem mniRegistrarEnfermero2;
+    private javax.swing.JMenuItem mniRegistrarEnfermero3;
     private javax.swing.JMenuItem mniRegistrarMedico;
+    private javax.swing.JMenuItem mniRegistrarMedico1;
     private javax.swing.JMenuItem mniRegistrarPaciente;
+    private javax.swing.JMenuItem mniRegistrarPaciente1;
     private javax.swing.JMenuItem mniRegistrarRecepcionista;
+    private javax.swing.JMenuItem mniRegistrarRecepcionista1;
     private javax.swing.JMenuItem mniReprogramar;
     private javax.swing.JMenuItem mniSalir;
     private javax.swing.JScrollPane pnlBackGround;

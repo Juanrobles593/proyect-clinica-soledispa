@@ -114,6 +114,36 @@ public abstract class Persona {
         this.telefonos = telefonos;
         this.direcciones = direcciones;
     }
+    
+    /**
+     * Constructor de Persona para crear una instancia sin correo.
+     * @param id id de la Perona
+     * @param nombre Nombre de la persona.
+     * @param apellidos Apellidos de la persona.
+     * @param cedula  Número de identifiación de la persona.
+     * @param email Correo electronico
+     * @param sexo Genero de la persona
+     */
+    public Persona(int id,String cedula, String nombre, String apellidos,String email,String sexo) {
+        this.cedula = cedula;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.email = email;
+        this.sexo= sexo;
+    }
+    /**
+     * Método que crea personas con solo 3 paramteros.
+     * @param id
+     * @param nombre
+     * @param apellidos 
+     */
+    public Persona(int id, String nombre, String apellidos) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+    }
+    
+    
     /**
      * Método que devuelve el nombre de la persona.
      * @return Nombre de la persona.

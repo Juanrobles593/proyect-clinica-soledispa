@@ -49,6 +49,22 @@ public class Paciente extends Persona {
             String sexo,List<Telefono> telefonos, List<Direccion> direcciones) {
         super(cedula, nombre, apellidos, tipoSangre, estadoCivil, poseeDiscapacidad, tipoDiscapacidad, fechaNacimiento,sexo, telefonos, direcciones);
     }
+    
+    
+    /**
+     * Constructor de Medico para crear una instancia sin correo.
+     * @param id id de la Perona
+     * @param nombre Nombre de la persona.
+     * @param apellidos Apellidos de la persona.
+     * @param cedula  Número de identifiación de la persona.
+     * @param email Correo electronico
+     * @param sexo Genero de la persona
+     */
+    public Paciente(int id,String cedula, String nombre, String apellidos,String email,String sexo) {
+        super(id, cedula, nombre, apellidos, email, sexo);
+    }
+    
+    
     /**
      * Método que imprime por consola los datos del paciente.
      * @return Cadena con los datos del paciente.

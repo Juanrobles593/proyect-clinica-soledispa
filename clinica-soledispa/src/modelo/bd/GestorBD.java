@@ -7,8 +7,13 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.sql.Timestamp;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import modelo.Consulta;
 import modelo.Direccion;
 import modelo.Enfermero;
 import modelo.Medico;
@@ -77,7 +82,7 @@ public class GestorBD {
                         ps.setString(1, p.getCedula());
                         ps.setString(2, p.getNombre());
                         ps.setString(3, p.getApellidos());
-                        ps.setString(4, p.getApellidos());
+                        ps.setString(4, p.getEmail());
                         ps.setString(5, p.getTipoSangre());
                         ps.setString(6, p.getEstadoCivil());
                         ps.setBoolean(7, p.getPoseeDiscapacidad());
@@ -248,7 +253,161 @@ public class GestorBD {
         }
         agregarUsuario(recepcionista.getId(), recepcionista.getCedula(), contrasena, 4); // 4 es el ID de Rol para Recepcionista
     }
-     
+    
+    /**
+     * Agrega una consulta a la base  de datos
+     * @param consulta 
+     */
+    public static void agregarConsulta(Consulta consulta) {
+        try {
+            Connection con = obtenerConexion();
+            String sql = "INSERT INTO Consulta (fecha, idPaciente, especialidad, idMedico,numeroTurno) " +
+                         "VALUES (?, ?, ?, ?,?)";
+            try (PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+                // Establecer los valores de los parámetros
+                
+                // Convierte LocalDateTime a Timestamp
+                Timestamp timestamp = Timestamp.valueOf(consulta.getFechaHora());
+                ps.setTimestamp(1, timestamp);
+                ps.setInt(2, consulta.getoPaciente().getId());
+                ps.setInt(3, consulta.getEspecialidad().getId());
+                ps.setInt(4, consulta.getoMedico().getId());
+                ps.setInt(4, 0);
+
+                int affectedRows = ps.executeUpdate();
+
+                if (affectedRows > 0) {
+                    // Éxito al agregar la consulta
+                    System.out.println("Consulta agregada exitosamente.");
+
+                    // Obtener el ID generado
+                    var generatedKeys = ps.getGeneratedKeys();
+                    if (generatedKeys.next()) {
+                        int idConsultaGenerado = generatedKeys.getInt(1);
+                        // Puedes hacer algo con el ID generado si es necesario
+                        System.out.println("ID de la consulta generada: " + idConsultaGenerado);
+                    }
+                } else {
+                    // Manejar el caso en que no se insertó correctamente en la tabla Consulta
+                    System.out.println("No se pudo agregar la consulta.");
+                }
+            }
+        } catch (SQLException | ClassNotFoundException ex) {
+            System.out.println(ex.toString());
+        }
+    }
+    
+    /**
+     * Método que recupera un Pacinte a partir de su numero cedula
+     * @param cedula
+     * @return 
+     */
+    public static Paciente obtenerPacientePorCedula(String cedula) {
+        Paciente paciente = null;
+
+        try {
+            Connection con = obtenerConexion();
+            String consulta = "SELECT * FROM Paciente p JOIN Persona pe ON p.idPersona = pe.idPersona WHERE pe.cedula = ?";
+
+            try (PreparedStatement ps = con.prepareStatement(consulta)) {
+                ps.setString(1, cedula);
+
+                try (ResultSet rs = ps.executeQuery()) {
+                    if (rs.next()) {
+                        // Obtener datos del paciente y la persona asociada
+                        int idPaciente = rs.getInt("idPaciente");
+                        int idPersona = rs.getInt("idPersona");
+                        String nombre = rs.getString("nombres");
+                        String apellidos = rs.getString("apellidos");
+                        String email = rs.getString("correoElectronico");
+                        String sexo = rs.getString("sexo");
+
+                        // Crear objeto Paciente
+                        paciente = new Paciente(idPaciente, cedula, nombre, apellidos, email, sexo);
+
+                        // Puedes configurar otros atributos del paciente según los datos en la base de datos
+                    }
+                }
+            }
+        } catch (SQLException | ClassNotFoundException ex) {
+            ex.toString();
+        }
+
+        return paciente;
+    }
+    /**
+     * Método que busca méicos para cada especialidad
+     * @param idEspecialidad
+     * @return 
+     */
+    public static List<Medico> obtenerMedicosPorEspecialidad(int idEspecialidad) {
+        List<Medico> listaMedicos = new ArrayList<>();
+
+        try {
+            Connection con = obtenerConexion();
+            String consulta = "SELECT * FROM Medico m JOIN Persona p ON m.idPersona = p.idPersona WHERE m.idEspecialidad = ?";
+
+            try (PreparedStatement ps = con.prepareStatement(consulta)) {
+                ps.setInt(1, idEspecialidad);
+
+                try (ResultSet rs = ps.executeQuery()) {
+                    while (rs.next()) {
+                        // Obtener datos del médico y la persona asociada
+                        int idMedico = rs.getInt("idMedico");
+                        int idPersona = rs.getInt("idPersona");
+                        String nombre = rs.getString("nombres");
+                        String apellidos = rs.getString("apellidos");
+                        // Puedes obtener más atributos según la estructura de tu base de datos
+
+                        // Crear objeto Medico y agregarlo a la lista
+                        Medico medico = new Medico(idMedico,  nombre, apellidos);
+                        listaMedicos.add(medico);
+                    }
+                }
+            }
+        } catch (SQLException | ClassNotFoundException ex) {
+            ex.toString();
+        }
+
+        return listaMedicos;
+    }
+
+    
+    
+    /**
+     * Obtiene el número total de citas para una fecha, especialidad y médico específicos.
+     * @param fecha Fecha para la cual se cuentan las citas.
+     * @param idEspecialidad ID de la especialidad.
+     * @param idMedico ID del médico.
+     * @return Número total de citas.
+     */
+    public static int obtenerNumeroCitasMedicas(Date fecha, int idEspecialidad, int idMedico) {
+        int totalCitas = 0;
+
+        try {
+            Connection con = obtenerConexion();
+            String sql = "SELECT COUNT(*) AS totalCitas FROM Consulta " +
+                         "WHERE CONVERT(DATE, fecha) = ? AND especialidad = ? AND idMedico = ?";
+            try (PreparedStatement ps = con.prepareStatement(sql)) {
+                // Convertir LocalDate a Date
+                ps.setDate(1, new java.sql.Date(fecha.getTime()));
+                ps.setInt(2, idEspecialidad);
+                ps.setInt(3, idMedico);
+
+                try (ResultSet rs = ps.executeQuery()) {
+                    if (rs.next()) {
+                        totalCitas = rs.getInt("totalCitas");
+                    }
+                }
+            }
+        } catch (SQLException | ClassNotFoundException ex) {
+            System.out.println(ex.toString());
+        }
+
+        return totalCitas;
+    }
+    
+    
     /**
      * Método para obtener la contraseña hasheada utilizando BCrypt
      * @param contrasena Recibe la contraseña como texto.
@@ -286,7 +445,11 @@ public class GestorBD {
             System.out.println(ex.toString());
         }
     }
-    // Método para agregar teléfonos a la base de datos
+    /**
+     * Metodo que añade telfonos a la base de datos con su respectivo referencia a la persona dueña de los datos.
+     * @param idPersona
+     * @param telefonos 
+     */
     private static void agregarTelefonos(int idPersona, List<Telefono> telefonos) {
         try {
             Connection con = obtenerConexion();

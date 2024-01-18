@@ -95,25 +95,28 @@ public class PnlRegistrarListener implements ActionListener, DocumentListener,Pr
                     p =  new Medico(especialidad, cedula, nombres, apellidos, correoElectronico, tipoSangre,
                     estadoCivil, fechaNacimiento, poseeDiscapacidad, tipoDiscapacidad, sexo, lstTelefonos, lstDirecciones);
                     GestorBD.agregarMedico((Medico)p, contrasena);
+                    limpiar();
                 }else{
-                    
-                if("REGISTRO DE PACIENTES".equals(pnl.getLblTitulo().getText())){
-                    p =  new Paciente( cedula, nombres, apellidos, correoElectronico, tipoSangre, estadoCivil,
-                        poseeDiscapacidad, tipoDiscapacidad, fechaNacimiento, sexo, lstTelefonos, lstDirecciones);
-                    GestorBD.agregarPaciente((Paciente)p);
-                }
-                
-                if("REGISTRO DE RECEPCIONISTAS".equals(pnl.getLblTitulo().getText())){
-                    p =  new Recepcionista( cedula, nombres, apellidos, correoElectronico, tipoSangre, estadoCivil,
+                    if("REGISTRO DE PACIENTES".equals(pnl.getLblTitulo().getText())){
+                        p =  new Paciente( cedula, nombres, apellidos, correoElectronico, tipoSangre, estadoCivil,
                             poseeDiscapacidad, tipoDiscapacidad, fechaNacimiento, sexo, lstTelefonos, lstDirecciones);
-                    GestorBD.agregarRecepcionista((Recepcionista)p, contrasena);
-                }
-                
-                if("REGISTRO DE ENFERMEROS(AS)".equals(pnl.getLblTitulo().getText())){
-                    p =  new Enfermero(cedula, nombres, apellidos, correoElectronico, tipoSangre, estadoCivil,
-                            poseeDiscapacidad, tipoDiscapacidad, fechaNacimiento, sexo, lstTelefonos, lstDirecciones);
-                    GestorBD.agregarEnfermero((Enfermero)p, contrasena);
-                }
+                        GestorBD.agregarPaciente((Paciente)p);
+                        limpiar();
+                    }
+
+                    if("REGISTRO DE RECEPCIONISTAS".equals(pnl.getLblTitulo().getText())){
+                        p =  new Recepcionista( cedula, nombres, apellidos, correoElectronico, tipoSangre, estadoCivil,
+                                poseeDiscapacidad, tipoDiscapacidad, fechaNacimiento, sexo, lstTelefonos, lstDirecciones);
+                        GestorBD.agregarRecepcionista((Recepcionista)p, contrasena);
+                        limpiar();
+                    }
+
+                    if("REGISTRO DE ENFERMEROS(AS)".equals(pnl.getLblTitulo().getText())){
+                        p =  new Enfermero(cedula, nombres, apellidos, correoElectronico, tipoSangre, estadoCivil,
+                                poseeDiscapacidad, tipoDiscapacidad, fechaNacimiento, sexo, lstTelefonos, lstDirecciones);
+                        GestorBD.agregarEnfermero((Enfermero)p, contrasena);
+                        limpiar();
+                    }
                 }
             }               
         }

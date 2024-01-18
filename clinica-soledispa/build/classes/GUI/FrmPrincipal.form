@@ -90,6 +90,11 @@
                 <Property name="text" type="java.lang.String" value="REGISTRAR"/>
               </Properties>
             </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="mniRegistrarMedico1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="REPORTE"/>
+              </Properties>
+            </MenuItem>
           </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="mnPaciente">
@@ -100,6 +105,11 @@
             <MenuItem class="javax.swing.JMenuItem" name="mniRegistrarPaciente">
               <Properties>
                 <Property name="text" type="java.lang.String" value="REGISTRAR"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="mniRegistrarPaciente1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="REPORTE"/>
               </Properties>
             </MenuItem>
           </SubComponents>
@@ -114,6 +124,11 @@
                 <Property name="text" type="java.lang.String" value="REGISTRAR"/>
               </Properties>
             </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="mniRegistrarRecepcionista1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="REPORTE"/>
+              </Properties>
+            </MenuItem>
           </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="mnEnfermero">
@@ -124,6 +139,11 @@
             <MenuItem class="javax.swing.JMenuItem" name="mniRegistrarEnfermero">
               <Properties>
                 <Property name="text" type="java.lang.String" value="REGISTRAR"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="mniRegistrarEnfermero1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="REPORTE"/>
               </Properties>
             </MenuItem>
           </SubComponents>
@@ -150,7 +170,24 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="mnReprogramar2">
               <Properties>
-                <Property name="text" type="java.lang.String" value="CONSULTAR"/>
+                <Property name="text" type="java.lang.String" value="TOMAR SIGNOS VITALES"/>
+              </Properties>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="mnEnfermero1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="USUARIOS"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="mniRegistrarEnfermero2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="EDITAR"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="mniRegistrarEnfermero3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="REPORTE"/>
               </Properties>
             </MenuItem>
           </SubComponents>
